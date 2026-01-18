@@ -1,7 +1,9 @@
+/* Reset box-sizing */
 * {
     box-sizing: border-box;
 }
 
+/* Body styling */
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -9,59 +11,73 @@ body {
     color: #fff;
 }
 
+/* Page title */
 h1 {
     text-align: center;
     padding: 20px;
     margin: 0;
+    font-size: 2rem;
 }
 
-/* Gallery */
+/* Gallery container */
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 15px;
+    display: grid; /* use CSS grid */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* responsive columns */
+    gap: 15px; /* spacing between images */
     padding: 20px;
-    max-width: 1200px;
+    max-width: 1200px; /* center gallery */
     margin: auto;
 }
 
+/* Gallery images */
 .gallery img {
-    width: 100%;
+    width: 100%; /* fill grid cell */
+    height: 200px; /* uniform height */
+    object-fit: cover; /* crop without stretching */
     border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+/* Hover effect on images */
 .gallery img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 15px rgba(255,255,255,0.25);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
-/* Lightbox */
+/* Lightbox overlay */
 .lightbox {
     position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.9);
+    inset: 0; /* top/right/bottom/left = 0 */
+    background: rgba(0, 0, 0, 0.9);
     display: none;
     justify-content: center;
     align-items: center;
     z-index: 999;
+    padding: 20px; /* small padding for smaller screens */
 }
 
+/* Show lightbox when active */
 .lightbox.active {
     display: flex;
 }
 
+/* Lightbox image */
 .lightbox-img {
     max-width: 90%;
     max-height: 90%;
     border-radius: 10px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
 }
 
+/* Close button */
 .close {
     position: absolute;
     top: 20px;
     right: 30px;
-    font-size: 32px;
+    font-size: 36px;
+    color: #fff;
     cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
 }
