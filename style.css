@@ -1,9 +1,13 @@
-/* Reset box-sizing */
+/* =========================
+   Reset box-sizing
+   ========================= */
 * {
     box-sizing: border-box;
 }
 
-/* Body styling */
+/* =========================
+   Body styling
+   ========================= */
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -11,7 +15,9 @@ body {
     color: #fff;
 }
 
-/* Page title */
+/* =========================
+   Page title
+   ========================= */
 h1 {
     text-align: center;
     padding: 20px;
@@ -63,7 +69,7 @@ h1 {
     display: flex;
 }
 
-.lightbox-img, 
+.lightbox-img,
 #video-lightbox video {
     max-width: 90%;
     max-height: 90%;
@@ -129,7 +135,7 @@ h1 {
 /* Video thumbnail styling */
 .video-thumb {
     width: 100%;
-    height: 200px;
+    aspect-ratio: 16 / 9; /* uniform 16:9 ratio */
     object-fit: cover;
     border-radius: 8px;
     cursor: pointer;
@@ -146,15 +152,17 @@ h1 {
 .video-item a.download {
     text-decoration: none;
     color: #fff;
-    background: #222;
-    padding: 6px 12px;
+    background: #333;
+    padding: 6px 14px;
     border-radius: 6px;
     font-size: 0.9rem;
-    transition: background 0.2s;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
 }
 
 .video-item a.download:hover {
-    background: #444;
+    background: #555;
+    color: #fff;
 }
 
 /* =========================
@@ -185,4 +193,3 @@ h1 {
     color: #fff;
     background: rgba(255, 255, 255, 0.1);
 }
-
