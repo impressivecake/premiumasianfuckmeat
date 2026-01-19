@@ -10,21 +10,35 @@
 
 <!-- Video gallery -->
 <div class="video-gallery">
-    <video controls>
-        <source src="media/a1.mp4" type="video/mp4">
-    </video>
 
-    <video controls>
-        <source src="media/a2.mp4" type="video/mp4">
-    </video>
+    <div class="video-item">
+        <video controls title="Premium Video 1">
+            <source src="media/a1.mp4" type="video/mp4">
+        </video>
+        <a href="media/a1.mp4" download class="download" onclick="trackDownload('a1.mp4')">Download Video 1</a>
+    </div>
 
-    <video controls>
-        <source src="media/a3.mp4" type="video/mp4">
-    </video>
+    <div class="video-item">
+        <video controls title="Premium Video 2">
+            <source src="media/a2.mp4" type="video/mp4">
+        </video>
+        <a href="media/a2.mp4" download class="download" onclick="trackDownload('a2.mp4')">Download Video 2</a>
+    </div>
 
-    <video controls>
-        <source src="media/a4.mp4" type="video/mp4">
-    </video>
+    <div class="video-item">
+        <video controls title="Premium Video 3">
+            <source src="media/a3.mp4" type="video/mp4">
+        </video>
+        <a href="media/a3.mp4" download class="download" onclick="trackDownload('a3.mp4')">Download Video 3</a>
+    </div>
+
+    <div class="video-item">
+        <video controls title="Premium Video 4">
+            <source src="media/a4.mp4" type="video/mp4">
+        </video>
+        <a href="media/a4.mp4" download class="download" onclick="trackDownload('a4.mp4')">Download Video 4</a>
+    </div>
+
 </div>
 
 <!-- Navigation at bottom -->
@@ -34,7 +48,7 @@
     <a href="location.html">Location</a>
 </nav>
 
-    <!-- Statcounter Code -->
+<!-- Statcounter Code -->
 <script type="text/javascript">
 var sc_project=13198901; 
 var sc_invisible=1; 
@@ -43,13 +57,25 @@ var sc_security="479f6cff";
 <script type="text/javascript"
 src="https://www.statcounter.com/counter/counter.js"
 async></script>
-<noscript><div class="statcounter"><a title="Web Analytics"
-href="https://statcounter.com/" target="_blank"><img
-class="statcounter"
-src="https://c.statcounter.com/13198901/0/479f6cff/1/"
-alt="Web Analytics"
-referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<noscript>
+<div class="statcounter">
+    <a title="Web Analytics" href="https://statcounter.com/" target="_blank">
+        <img class="statcounter"
+             src="https://c.statcounter.com/13198901/0/479f6cff/1/"
+             alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade">
+    </a>
+</div>
+</noscript>
 <!-- End of Statcounter Code -->
+
+<!-- Download tracking -->
+<script>
+function trackDownload(filename) {
+    if (window.sc_async_config) {
+        sc_async_config.trackDownload(filename);
+    }
+}
+</script>
 
 </body>
 </html>
