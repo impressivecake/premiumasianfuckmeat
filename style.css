@@ -85,16 +85,32 @@ h1 {
 /* =========================
    Navigation (tabs) 
    ========================= */
+/* =========================
+   Navigation (tabs) 
+   ========================= */
 .nav {
-    text-align: center;
-    margin: 30px 0;
+    display: flex;             /* use flexbox */
+    justify-content: center;   /* center items horizontally */
+    align-items: center;       /* center vertically if needed */
+    gap: 20px;                 /* spacing between links */
+    margin: 30px 0;            /* vertical spacing from page content */
+    flex-wrap: wrap;           /* wrap on smaller screens */
 }
 
 .nav a {
-    margin: 0 15px;
     text-decoration: none;
     color: #fff;
+    font-weight: bold;
+    padding: 8px 12px;         /* clickable padding */
+    border-radius: 5px;        /* subtle rounded edges */
+    transition: background 0.2s ease;
 }
+
+/* Hover effect for nav links */
+.nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
 
 /* =========================
    Video page gallery
