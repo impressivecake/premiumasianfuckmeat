@@ -8,37 +8,35 @@
 </head>
 <body>
 
-<!-- Video gallery -->
+<!-- Video gallery using thumbnails -->
 <div class="video-gallery">
 
     <div class="video-item">
-        <video controls title="Premium Video 1">
-            <source src="media/a1.mp4" type="video/mp4">
-        </video>
+        <img src="media/a1.jpg" alt="Video 1" class="video-thumb" onclick="openVideo('media/a1.mp4')">
         <a href="media/a1.mp4" download class="download" onclick="trackDownload('a1.mp4')">Download Video 1</a>
     </div>
 
     <div class="video-item">
-        <video controls title="Premium Video 2">
-            <source src="media/a2.mp4" type="video/mp4">
-        </video>
+        <img src="media/a2.jpg" alt="Video 2" class="video-thumb" onclick="openVideo('media/a2.mp4')">
         <a href="media/a2.mp4" download class="download" onclick="trackDownload('a2.mp4')">Download Video 2</a>
     </div>
 
     <div class="video-item">
-        <video controls title="Premium Video 3">
-            <source src="media/a3.mp4" type="video/mp4">
-        </video>
+        <img src="media/a3.jpg" alt="Video 3" class="video-thumb" onclick="openVideo('media/a3.mp4')">
         <a href="media/a3.mp4" download class="download" onclick="trackDownload('a3.mp4')">Download Video 3</a>
     </div>
 
     <div class="video-item">
-        <video controls title="Premium Video 4">
-            <source src="media/a4.mp4" type="video/mp4">
-        </video>
+        <img src="media/a4.jpg" alt="Video 4" class="video-thumb" onclick="openVideo('media/a4.mp4')">
         <a href="media/a4.mp4" download class="download" onclick="trackDownload('a4.mp4')">Download Video 4</a>
     </div>
 
+</div>
+
+<!-- Video lightbox -->
+<div id="video-lightbox" class="lightbox">
+    <span class="close" onclick="closeVideo()">&times;</span>
+    <video id="lightbox-video" controls autoplay></video>
 </div>
 
 <!-- Navigation at bottom -->
@@ -68,12 +66,29 @@ async></script>
 </noscript>
 <!-- End of Statcounter Code -->
 
-<!-- Download tracking -->
+<!-- Download tracking & lightbox JS -->
 <script>
 function trackDownload(filename) {
     if (window.sc_async_config) {
         sc_async_config.trackDownload(filename);
     }
+}
+
+// Open video in lightbox
+function openVideo(src) {
+    const lightbox = document.getElementById('video-lightbox');
+    const video = document.getElementById('lightbox-video');
+    video.src = src;
+    lightbox.classList.add('active');
+}
+
+// Close video lightbox
+function closeVideo() {
+    const lightbox = document.getElementById('video-lightbox');
+    const video = document.getElementById('lightbox-video');
+    video.pause();
+    video.src = '';
+    lightbox.classList.remove('active');
 }
 </script>
 
