@@ -5,12 +5,11 @@
     <title>Videos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script
-  defer
-  src="https://cloud.umami.is/script.js"
-  data-website-id="6f4bfa0e-e236-465b-b3e2-392e0b580ba6">
-</script>
 
+    <!-- Umami tracking -->
+    <script defer src="https://cloud.umami.is/script.js"
+        data-website-id="6f4bfa0e-e236-465b-b3e2-392e0b580ba6">
+    </script>
 </head>
 <body>
 
@@ -57,9 +56,7 @@ var sc_project=13198901;
 var sc_invisible=1; 
 var sc_security="479f6cff"; 
 </script>
-<script type="text/javascript"
-src="https://www.statcounter.com/counter/counter.js"
-async></script>
+<script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
 <noscript>
 <div class="statcounter">
     <a title="Web Analytics" href="https://statcounter.com/" target="_blank">
@@ -74,8 +71,13 @@ async></script>
 <!-- Download tracking & lightbox JS -->
 <script>
 function trackDownload(filename) {
+    // Statcounter download tracking
     if (window.sc_async_config) {
         sc_async_config.trackDownload(filename);
+    }
+    // Umami download tracking
+    if (window.umami) {
+        umami.track('Video Download', { file: filename });
     }
 }
 
@@ -85,6 +87,11 @@ function openVideo(src) {
     const video = document.getElementById('lightbox-video');
     video.src = src;
     lightbox.classList.add('active');
+
+    // Track video play with Umami
+    if (window.umami) {
+        umami.track('Video Played', { file: src });
+    }
 }
 
 // Close video lightbox
