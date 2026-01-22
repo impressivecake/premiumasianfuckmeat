@@ -125,14 +125,12 @@ h1 {
     margin: auto;
 }
 
-/* Each video item (thumbnail + download link) */
 .video-item {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Video thumbnail styling */
 .video-thumb {
     width: 100%;
     aspect-ratio: 16 / 9; /* uniform 16:9 ratio */
@@ -148,7 +146,6 @@ h1 {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
-/* Download button styling */
 .video-item a.download {
     text-decoration: none;
     color: #fff;
@@ -163,6 +160,53 @@ h1 {
 .video-item a.download:hover {
     background: #555;
     color: #fff;
+}
+
+/* =========================
+   GIF gallery
+   ========================= */
+.gif-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.gif-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gif-display {
+    width: 100%;
+    max-height: 300px;       /* standardized GIF height */
+    object-fit: cover;       /* crops if needed */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gif-display:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.gif-item a.download {
+    text-decoration: none;
+    color: #fff;
+    background: #222;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.gif-item a.download:hover {
+    background: #444;
 }
 
 /* =========================
