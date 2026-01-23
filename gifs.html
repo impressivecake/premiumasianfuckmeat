@@ -19,7 +19,11 @@
 <div class="gif-gallery">
 
     <div class="gif-item">
-        <img src="media/g1.gif" alt="GIF 1" class="gif-display">
+        <img src="media/g1.gif"
+             alt="GIF 1"
+             class="gif-display"
+             loading="lazy"
+             onclick="openGif('media/g1.gif')">
         <a href="media/g1.gif"
            download
            class="download"
@@ -29,7 +33,11 @@
     </div>
 
     <div class="gif-item">
-        <img src="media/g2.gif" alt="GIF 2" class="gif-display">
+        <img src="media/g2.gif"
+             alt="GIF 2"
+             class="gif-display"
+             loading="lazy"
+             onclick="openGif('media/g2.gif')">
         <a href="media/g2.gif"
            download
            class="download"
@@ -39,7 +47,11 @@
     </div>
 
     <div class="gif-item">
-        <img src="media/g3.gif" alt="GIF 3" class="gif-display">
+        <img src="media/g3.gif"
+             alt="GIF 3"
+             class="gif-display"
+             loading="lazy"
+             onclick="openGif('media/g3.gif')">
         <a href="media/g3.gif"
            download
            class="download"
@@ -48,6 +60,12 @@
         </a>
     </div>
 
+</div>
+
+<!-- GIF lightbox -->
+<div class="lightbox" id="gif-lightbox">
+    <span class="close" onclick="closeGif()">&times;</span>
+    <img id="gif-lightbox-img" class="lightbox-img" src="" alt="">
 </div>
 
 <!-- Navigation -->
@@ -85,8 +103,22 @@ async></script>
 </div>
 </noscript>
 
-<!-- Umami GIF download tracking -->
+<!-- Lightbox + Umami download tracking -->
 <script>
+function openGif(src) {
+    const lightbox = document.getElementById('gif-lightbox');
+    const img = document.getElementById('gif-lightbox-img');
+    img.src = src;
+    lightbox.classList.add('active');
+}
+
+function closeGif() {
+    const lightbox = document.getElementById('gif-lightbox');
+    const img = document.getElementById('gif-lightbox-img');
+    img.src = '';
+    lightbox.classList.remove('active');
+}
+
 function trackGifDownload(filename) {
     if (window.umami) {
         umami.track('gif-download', { file: filename });
