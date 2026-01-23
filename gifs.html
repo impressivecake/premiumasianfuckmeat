@@ -20,35 +20,56 @@
 
     <div class="gif-item">
         <img src="media/g1.gif" alt="GIF 1" class="gif-display">
-        <a href="media/g1.gif" download class="download" onclick="trackDownload('g1.gif')">Download GIF 1</a>
+        <a href="media/g1.gif"
+           download
+           class="download"
+           onclick="trackGifDownload('g1.gif')">
+           Download GIF 1
+        </a>
     </div>
 
     <div class="gif-item">
         <img src="media/g2.gif" alt="GIF 2" class="gif-display">
-        <a href="media/g2.gif" download class="download" onclick="trackDownload('g2.gif')">Download GIF 2</a>
+        <a href="media/g2.gif"
+           download
+           class="download"
+           onclick="trackGifDownload('g2.gif')">
+           Download GIF 2
+        </a>
     </div>
 
     <div class="gif-item">
         <img src="media/g3.gif" alt="GIF 3" class="gif-display">
-        <a href="media/g3.gif" download class="download" onclick="trackDownload('g3.gif')">Download GIF 3</a>
+        <a href="media/g3.gif"
+           download
+           class="download"
+           onclick="trackGifDownload('g3.gif')">
+           Download GIF 3
+        </a>
     </div>
 
-    
 </div>
 
-<!-- Navigation at bottom -->
+<!-- Navigation -->
 <nav class="nav">
     <a href="index.html">Gallery</a>
     <a href="videos.html">Videos</a>
     <a href="location.html">Location</a>
 </nav>
 
+<!-- Footer profile links -->
+<footer class="footer">
+    <div class="profile-links">
+        <a href="https://www.reddit.com/user/Top-Dig1314/" target="_blank" rel="noopener">Reddit</a>
+        <a href="https://www.redgifs.com/users/automatic_risk5079" target="_blank" rel="noopener">RedGIFs</a>
+    </div>
+</footer>
 
-<!-- Statcounter code -->
+<!-- Statcounter Code -->
 <script type="text/javascript">
-var sc_project=13198901; 
-var sc_invisible=1; 
-var sc_security="479f6cff"; 
+var sc_project=13198901;
+var sc_invisible=1;
+var sc_security="479f6cff";
 </script>
 <script type="text/javascript"
 src="https://www.statcounter.com/counter/counter.js"
@@ -58,16 +79,17 @@ async></script>
     <a title="Web Analytics" href="https://statcounter.com/" target="_blank">
         <img class="statcounter"
              src="https://c.statcounter.com/13198901/0/479f6cff/1/"
-             alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade">
+             alt="Web Analytics"
+             referrerPolicy="no-referrer-when-downgrade">
     </a>
 </div>
 </noscript>
 
-<!-- Download tracking -->
+<!-- Umami GIF download tracking -->
 <script>
-function trackDownload(filename) {
-    if (window.sc_async_config) {
-        sc_async_config.trackDownload(filename);
+function trackGifDownload(filename) {
+    if (window.umami) {
+        umami.track('gif-download', { file: filename });
     }
 }
 </script>
