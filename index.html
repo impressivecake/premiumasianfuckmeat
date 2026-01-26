@@ -18,42 +18,37 @@
 <h1>Premium Asian Fuckmeat</h1>
 
 <div class="gallery">
-    <img src="media/1.jpg" alt="">
-    <img src="media/2.jpg" alt="">
-    <img src="media/3.jpg" alt="">
-    <img src="media/4.jpg" alt="">
-    <img src="media/5.jpg" alt="">
-    <img src="media/6.jpg" alt="">
-    <img src="media/7.jpg" alt="">
-    <img src="media/8.jpg" alt="">
-    <img src="media/9.jpg" alt="">
-    <img src="media/10.jpg" alt="">
-    <img src="media/11.jpg" alt="">
-    <img src="media/12a.jpg" alt="">
-    <img src="media/13.jpg" alt="">
-    <img src="media/14.jpg" alt="">
-    <img src="media/15.jpg" alt="">
+    <img src="media/1.jpg" alt="" loading="lazy">
+    <img src="media/2.jpg" alt="" loading="lazy">
+    <img src="media/3.jpg" alt="" loading="lazy">
+    <img src="media/4.jpg" alt="" loading="lazy">
+    <img src="media/5.jpg" alt="" loading="lazy">
+    <img src="media/6.jpg" alt="" loading="lazy">
+    <img src="media/7.jpg" alt="" loading="lazy">
+    <img src="media/8.jpg" alt="" loading="lazy">
+    <img src="media/9.jpg" alt="" loading="lazy">
+    <img src="media/10.jpg" alt="" loading="lazy">
+    <img src="media/11.jpg" alt="" loading="lazy">
+    <img src="media/12a.jpg" alt="" loading="lazy">
+    <img src="media/13.jpg" alt="" loading="lazy">
+    <img src="media/14.jpg" alt="" loading="lazy">
+    <img src="media/15.jpg" alt="" loading="lazy">
 </div>
 
-<!-- Single reusable lightbox -->
+<!-- Lightbox overlay -->
 <div class="lightbox" id="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-img" src="" alt="">
+    <span class="close" id="lightbox-close">&times;</span>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
 </div>
-
-<script src="lightbox.js"></script>
 
 <!-- Navigation -->
 <nav class="nav">
     <a href="videos.html">Videos</a>
     <a href="gifs.html">GIFs</a>
-    <a href="media/location.jpg"
-       target="_blank"
-       onclick="trackLocation()">
-       Location
-    </a>
+    <a href="media/location.jpg" target="_blank" onclick="trackLocation()">Location</a>
 </nav>
 
+<!-- Footer -->
 <footer class="footer">
     <div class="profile-links">
         <a href="https://www.reddit.com/user/Top-Dig1314/" target="_blank" rel="noopener">Reddit</a>
@@ -80,16 +75,18 @@ async></script>
     </a>
 </div>
 </noscript>
-<!-- End Statcounter -->
 
 <!-- Umami event tracking -->
 <script>
 function trackLocation() {
     if (window.umami) {
-        umami.track('Location image opened (index)');
+        umami.track('location-opened');
     }
 }
 </script>
+
+<!-- Lightbox script -->
+<script src="lightbox.js"></script>
 
 </body>
 </html>
